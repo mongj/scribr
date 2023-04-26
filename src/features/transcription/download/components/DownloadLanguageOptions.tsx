@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 
 import { useOutsideClick } from '@chakra-ui/react';
-import SkeletonList from '@components/ui/skeleton-list';
+import SkeletonList from '@components/ui/SkeletonList';
 import { useTranscriptStore } from '@transcription/store/transcript';
 
 import { useTranscriptDownloadStore } from '../store/download';

@@ -1,4 +1,4 @@
-import { useTranscriptEventStore } from '@transcription/store/transcript-event';
+import { useTranscriptEventStore } from '../store/transcript-event';
 
 const userScrollKeys = ['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', 'Space'];
 
@@ -66,7 +66,7 @@ function KeyUpHandler(event) {
     }
 }
 
-const transcriptEventHandlers = {
+export {
     ScrollHandler,
     MouseDownHandler,
     MouseUpHandler,
@@ -74,5 +74,3 @@ const transcriptEventHandlers = {
     KeyUpHandler,
     WheelHandler,
 };
-
-export default transcriptEventHandlers;

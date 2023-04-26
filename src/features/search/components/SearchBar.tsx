@@ -5,7 +5,7 @@ import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
 import { Search } from 'lucide-react';
 import { useRouter } from 'next/router';
 
-import searchHandler from './search-handler';
+import searchHandler from '../lib/search-handler';
 
 export default function SearchBar(props) {
     const videoLink = useRef<HTMLInputElement>(null);

@@ -4,11 +4,11 @@ import { Button, Menu, MenuButton, MenuList, useOutsideClick } from '@chakra-ui/
 import { ChevronDownIcon, Globe2Icon } from 'lucide-react';
 import { Inter } from 'next/font/google';
 
-import LanguageList from './language-options';
+import LanguageList from './LanguageOptions';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function LanguageMenu() {
+export default function TranscriptLanguageMenu() {
     const ref = useRef(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     useOutsideClick({

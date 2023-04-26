@@ -1,4 +1,4 @@
-import SkeletonList from '@components/ui/skeleton-list';
+import SkeletonList from '@components/ui/SkeletonList';
 
 import { useTranscriptStore } from '../../store/transcript';
 

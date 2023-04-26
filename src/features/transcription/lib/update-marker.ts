@@ -1,7 +1,7 @@
-import { useTranscriptEventStore } from '@transcription/store/transcript-event';
-
 import { useYTPlayerStore } from '@/features/youtube-player/store/yt-player';
-import styles from '@/pages/video/TimestampedTranscript.module.css';
+
+import styles from '../components/transcripts/TimestampedTranscript/index.module.css';
+import { useTranscriptEventStore } from '../store/transcript-event';
 
 let currentPlayerTime: number;
 

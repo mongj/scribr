@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import SkeletonList from '@components/ui/skeleton-list';
+import SkeletonList from '@components/ui/SkeletonList';
 import { UpdateMarker } from '@transcription/lib/update-marker';
 import { useTranscriptStore } from '@transcription/store/transcript';
 import { useTranscriptEventStore } from '@transcription/store/transcript-event';

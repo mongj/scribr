@@ -1,9 +1,11 @@
 import { Button } from '@chakra-ui/react';
-import Navbar from '@components/layouts/navigation-bar';
-import SearchBar from '@search/search-bar';
+import Navbar from '@components/layouts/Navbar';
+import SearchBar from '@search/components/SearchBar';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+
+import { getRandomVideoID } from '@/utils/get-random-video';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -40,8 +42,8 @@ export default function Home() {
                                 onClick={() => {
                                     router.push({
                                         pathname: '/video',
-                                        query: { id: 'e3fz3dqhN44' },
-                                    }); // just for testing
+                                        query: { id: getRandomVideoID() },
+                                    });
                                 }}
                             >
                                 <span

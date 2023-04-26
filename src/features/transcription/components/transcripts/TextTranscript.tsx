@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import SkeletonList from '@components/ui/skeleton-list';
+import SkeletonList from '@components/ui/SkeletonList';
 import { useTranscriptStore } from '@transcription/store/transcript';
 import _ from 'lodash';
 import { Inter } from 'next/font/google';

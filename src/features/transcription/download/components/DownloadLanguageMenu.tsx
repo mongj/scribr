@@ -5,7 +5,7 @@ import { ChevronDownIcon } from 'lucide-react';
 import { Inter } from 'next/font/google';
 
 import { useTranscriptDownloadStore } from '../store/download';
-import DownloadLanguageOptions from './language-options';
+import DownloadLanguageOptions from './DownloadLanguageOptions';
 
 const inter = Inter({ subsets: ['latin'] });
 

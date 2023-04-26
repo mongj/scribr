@@ -1,8 +1,7 @@
 import { Link } from '@chakra-ui/next-js';
 import logoLight from '@public/scribr-logo-light.svg';
+import SearchBar from '@search/components/SearchBar';
 import Image from 'next/image';
-
-import SearchBar from '@/features/search/search-bar';
 
 export default function Navbar(props) {
     return (
