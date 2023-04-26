@@ -18,7 +18,7 @@ export const useTranscriptEventStore = create<TranscriptEventState>()((set) => (
     isWheeling: false,
     isMouseDown: false,
     isKeyDown: false,
-    autoscroll: false,
+    autoscroll: true,
     updateScrolling: (status) => set({ isScrolling: status }),
     updateWheeling: (status) => set({ isWheeling: status }),
     updateMouseDown: (status) => set({ isMouseDown: status }),
