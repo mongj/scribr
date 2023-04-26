@@ -1,0 +1,14 @@
+.marker-previous {
+    font-weight: 400;
+    color: rgb(156 163 175);
+}
+
+.marker-current {
+    font-weight: 600;
+    color: rgb(31 41 55);
+}
+
+.marker-next {
+    font-weight: 400;
+    color: rgb(31 41 55);
+}

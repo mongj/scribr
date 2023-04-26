@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-}
+    experimental: {
+        appDir: true,
+    },
+    reactStrictMode: true,
+    env: {
+        TRANSCRIPTION_API_ENDPOINT: process.env.TRANSCRIPTION_API_ENDPOINT,
+    },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
