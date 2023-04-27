@@ -1,16 +1,16 @@
 import { FormEvent, RefObject } from 'react';
 
-import { useTranscriptDownloadStore } from '@transcription/download/store/download';
-import { useTranscriptStore } from '@transcription/store/transcript';
 import { NextRouter } from 'next/router';
+
+import { resetTranscriptStores } from '@/utils/reset-transcript-stores';
 
 export default function searchHandler(
     event: FormEvent,
     videoLink: RefObject<HTMLInputElement>,
     router: NextRouter,
 ) {
-    useTranscriptStore.getState().reset();
-    useTranscriptDownloadStore.getState().reset();
+    resetTranscriptStores();
+
     event.preventDefault();
     const URL = videoLink.current!.value;
     if (URL == '') {

@@ -30,7 +30,5 @@ const initialState: TranscriptState = {
 export const useTranscriptStore = create<TranscriptState & TranscriptActions>()((set) => ({
     ...initialState,
 
-    reset: () => {
-        set(initialState);
-    },
+    reset: () => set(initialState),
 }));

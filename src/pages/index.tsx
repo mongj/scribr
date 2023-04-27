@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import { getRandomVideoID } from '@/utils/get-random-video';
+import { resetTranscriptStores } from '@/utils/reset-transcript-stores';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -40,6 +41,7 @@ export default function Home() {
                                 background="#f8fafc"
                                 _hover={{ background: '#f1f5f9' }}
                                 onClick={() => {
+                                    resetTranscriptStores();
                                     router.push({
                                         pathname: '/video',
                                         query: { id: getRandomVideoID() },
