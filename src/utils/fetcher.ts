@@ -4,7 +4,6 @@ export const fetcher = (url) =>
             return res.json();
         } else {
             throw {
-                name: 'ErrorName',
                 message: res.json(),
             };
         }
