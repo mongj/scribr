@@ -1,3 +1,5 @@
+'use client';
+
 import Dreamer from '@public/dreamer.svg';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -5,6 +7,8 @@ import Image from 'next/image';
 import Navbar from './Navbar';
 
 export default function Layout({ children }) {
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 1350;
+
     return (
         <div className="flex flex-col w-full">
             <div className="max-[1350px]:hidden flex flex-col min-h-screen max-h-screen w-full overflow-hidden">
@@ -15,7 +19,7 @@ export default function Layout({ children }) {
                     <Navbar showSearchBar={true} />
                 </header>
                 {/* Below is just a temporary fix, the window width is only compared once when the component is first mounted and it does not track the changes in window width if the window is resized later on */}
-                {window.innerWidth > 1350 ? children : null}
+                {!isMobile ? children : null}
             </div>
             <div className="min-[1350px]:hidden flex flex-col min-h-screen max-h-screen w-full overflow-hidden p-8 justify-center bg-slate-50">
                 <div className="flex flex-col items-center">
