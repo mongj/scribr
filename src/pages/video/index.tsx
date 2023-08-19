@@ -35,7 +35,7 @@ export default function VideoTranscriptPage() {
                     </div>
                     <div className="mb-2 ml-2 mt-4">
                         <Stack direction="row">
-                            <h3 className="text-base text-xl font-semibold">AI Copilot</h3>
+                            <h3 className="text-base font-semibold">AI Copilot</h3>
                             <div className="h-full align-middle">
                                 <Badge colorScheme="blue">Experimental</Badge>
                             </div>
@@ -66,9 +66,7 @@ export default function VideoTranscriptPage() {
                 </div>
                 <div className="ml-4 flex flex-auto flex-col overflow-hidden rounded-lg border-2 border-slate-100 bg-white">
                     <div className="mx-4 mt-4 flex flex-row">
-                        <h3 className="self-center pl-2 text-base text-xl font-semibold">
-                            Transcript
-                        </h3>
+                        <h3 className="self-center pl-2 text-base font-semibold">Transcript</h3>
                         <div className="ml-auto flex gap-2">
                             <TranscriptSyncButton />
                             <TranscriptLanguageMenu />
