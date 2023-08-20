@@ -23,6 +23,7 @@ export default function TranscriptTabs(props) {
             <TabList paddingLeft={4} display="flex">
                 <Tab>Follow</Tab>
                 <Tab>Read</Tab>
+                <Tab>Outline</Tab>
             </TabList>
             <TabIndicator
                 mt="-1.5px"
@@ -49,6 +50,7 @@ export default function TranscriptTabs(props) {
                 <TabPanel>
                     <TextTranscript id={props.id} />
                 </TabPanel>
+                <TabPanel>work in progress</TabPanel>
             </TabPanels>
         </Tabs>
     );
