@@ -1,9 +1,8 @@
-import { useRef } from 'react';
-import { FormEvent } from 'react';
-
 import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
 import { Search } from 'lucide-react';
 import { useRouter } from 'next/router';
+import { useRef } from 'react';
+import { FormEvent } from 'react';
 
 import searchHandler from '../lib/search-handler';
 
@@ -22,7 +21,11 @@ export default function SearchBar(props) {
         <form className="flex w-full mt-2 mb-2" onSubmit={submitHandler}>
             <InputGroup>
                 <InputLeftElement pointerEvents="none" h="100%" pl="1rem">
-                    <Search color="gray" strokeWidth={1.5} size={props.iconsize} />
+                    <Search
+                        color="gray"
+                        strokeWidth={1.5}
+                        size={props.iconsize}
+                    />
                 </InputLeftElement>
                 <Input
                     className="!shadow-[0_1px_1px_rgba(0,0,0,0.04),0_2px_10px_rgba(0,0,0,0.04)]"

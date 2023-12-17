@@ -1,3 +1,4 @@
+import Layout from '@/components/layouts';
 import {
     Badge,
     Stack,
@@ -17,8 +18,6 @@ import _ from 'lodash';
 import { Inter } from 'next/font/google';
 import { useRouter } from 'next/router';
 
-import Layout from '@/components/layouts';
-
 const inter = Inter({ subsets: ['latin'] });
 
 export default function VideoTranscriptPage() {
@@ -31,11 +30,17 @@ export default function VideoTranscriptPage() {
             >
                 <div className="flex flex-col">
                     <div className="flex flex-none overflow-hidden rounded-lg border-2 border-slate-100 bg-white">
-                        <YTPlayer id={router.query.id} height={405} width={720} />
+                        <YTPlayer
+                            id={router.query.id}
+                            height={405}
+                            width={720}
+                        />
                     </div>
                     <div className="mb-2 ml-2 mt-4">
                         <Stack direction="row">
-                            <h3 className="text-base font-semibold">AI Copilot</h3>
+                            <h3 className="text-base font-semibold">
+                                AI Copilot
+                            </h3>
                             <div className="h-full align-middle">
                                 <Badge colorScheme="blue">Experimental</Badge>
                             </div>
@@ -66,7 +71,9 @@ export default function VideoTranscriptPage() {
                 </div>
                 <div className="ml-4 flex flex-auto flex-col overflow-hidden rounded-lg border-2 border-slate-100 bg-white">
                     <div className="mx-4 mt-4 flex flex-row">
-                        <h3 className="self-center pl-2 text-base font-semibold">Transcript</h3>
+                        <h3 className="self-center pl-2 text-base font-semibold">
+                            Transcript
+                        </h3>
                         <div className="ml-auto flex gap-2">
                             <TranscriptSyncButton />
                             <TranscriptLanguageMenu />

@@ -4,7 +4,9 @@ import { useTranscriptStore } from '../../store/transcript';
 
 export default function LanguageOptions() {
     const targetLanguage = useTranscriptStore((state) => state.targetLanguage);
-    const availableLanguages = useTranscriptStore((state) => state.availableLanguages);
+    const availableLanguages = useTranscriptStore(
+        (state) => state.availableLanguages,
+    );
 
     if (availableLanguages.length > 0) {
         const languageList = availableLanguages.map((transcript) => {
@@ -20,7 +22,9 @@ export default function LanguageOptions() {
                         });
                     }}
                     className={`px-4 hover:bg-slate-100 ${
-                        targetLanguage == transcript.language ? 'font-semibold' : null
+                        targetLanguage == transcript.language
+                            ? 'font-semibold'
+                            : null
                     } hover:font-semibold`}
                     role="button"
                     data-lang={transcript.languageCode}
@@ -30,7 +34,11 @@ export default function LanguageOptions() {
             );
         });
 
-        return <div className="flex flex-col max-h-[50vh] overflow-auto">{languageList}</div>;
+        return (
+            <div className="flex flex-col max-h-[50vh] overflow-auto">
+                {languageList}
+            </div>
+        );
     }
     return (
         <div className="px-2">

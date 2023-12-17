@@ -1,3 +1,4 @@
+import { inter } from '@/utils/font';
 import {
     Button,
     Modal,
@@ -10,8 +11,6 @@ import {
 import { useDisclosure } from '@chakra-ui/react';
 import { DownloadIcon } from 'lucide-react';
 
-import { inter } from '@/utils/font';
-
 import { DownloadData } from '../lib/download';
 import DownloadFiletypeMenu from './DownloadFiletypeMenu';
 import DownloadLanguageMenu from './DownloadLanguageMenu';
@@ -22,14 +21,18 @@ export default function TranscriptDownloadButton(props) {
     return (
         <>
             <Button
-                leftIcon={<DownloadIcon color="gray" strokeWidth={1.5} size={15} />}
+                leftIcon={
+                    <DownloadIcon color="gray" strokeWidth={1.5} size={15} />
+                }
                 border="1px"
                 borderColor="gray.200"
                 background=""
                 _hover={{ background: '#f1f5f9' }}
                 onClick={onOpen}
             >
-                <span className="text-sm font-semibold text-slate-500">{'Download'}</span>
+                <span className="text-sm font-semibold text-slate-500">
+                    {'Download'}
+                </span>
             </Button>
             <Modal onClose={onClose} isOpen={isOpen} isCentered>
                 <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(10px)" />

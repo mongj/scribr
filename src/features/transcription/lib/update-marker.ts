@@ -15,13 +15,18 @@ function UpdateMarkerIfPlaying() {
 function UpdateMarker() {
     currentPlayerTime = useYTPlayerStore.getState().player.getCurrentTime();
 
-    const transcriptArray = Array.from(document.getElementsByClassName('marker'));
+    const transcriptArray = Array.from(
+        document.getElementsByClassName('marker'),
+    );
 
     transcriptArray.forEach((element: Element) => {
         const segmentStart = Number(element.getAttribute('data-start'));
         const segmentEnd = Number(element.getAttribute('data-end'));
 
-        if (currentPlayerTime >= segmentStart && currentPlayerTime <= segmentEnd) {
+        if (
+            currentPlayerTime >= segmentStart &&
+            currentPlayerTime <= segmentEnd
+        ) {
             element.classList.add('marker-focus');
             element.classList.add(styles['marker-current']);
             element.classList.remove(styles['marker-previous']);

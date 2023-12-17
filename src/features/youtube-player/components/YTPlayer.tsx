@@ -1,8 +1,6 @@
-import YouTube, { YouTubeProps } from 'react-youtube';
-
-import { UpdateMarkerIfPlaying } from '@transcription/lib/update-marker';
-
 import { useYTPlayerStore } from '@/features/youtube-player/store/yt-player';
+import { UpdateMarkerIfPlaying } from '@transcription/lib/update-marker';
+import YouTube, { YouTubeProps } from 'react-youtube';
 
 let isSyncIntervalSet: Boolean = false;
 

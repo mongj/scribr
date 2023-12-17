@@ -1,8 +1,13 @@
-import { useRef, useState } from 'react';
-
-import { Button, Menu, MenuButton, MenuList, useOutsideClick } from '@chakra-ui/react';
+import {
+    Button,
+    Menu,
+    MenuButton,
+    MenuList,
+    useOutsideClick,
+} from '@chakra-ui/react';
 import { ChevronDownIcon } from 'lucide-react';
 import { Inter } from 'next/font/google';
+import { useRef, useState } from 'react';
 
 import { useTranscriptDownloadStore } from '../store/download';
 import DownloadFiletypeOptions from './DownloadFiletypeOptions';
@@ -17,13 +22,17 @@ export default function DownloadFiletypeMenu() {
         handler: () => setIsModalOpen(false),
     });
 
-    const targetDownloadFiletype = useTranscriptDownloadStore((state) => state.fileType);
+    const targetDownloadFiletype = useTranscriptDownloadStore(
+        (state) => state.fileType,
+    );
 
     return (
         <Menu isOpen={isModalOpen}>
             <MenuButton
                 as={Button}
-                rightIcon={<ChevronDownIcon color="gray" strokeWidth={1.5} size={20} />}
+                rightIcon={
+                    <ChevronDownIcon color="gray" strokeWidth={1.5} size={20} />
+                }
                 border="1px"
                 borderColor="gray.200"
                 background=""
@@ -34,7 +43,9 @@ export default function DownloadFiletypeMenu() {
                     setIsModalOpen(true);
                 }}
             >
-                <span className={`${inter.className} text-sm font-semibold text-slate-500`}>
+                <span
+                    className={`${inter.className} text-sm font-semibold text-slate-500`}
+                >
                     {targetDownloadFiletype}
                 </span>
             </MenuButton>

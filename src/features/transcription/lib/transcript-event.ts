@@ -1,6 +1,14 @@
 import { useTranscriptEventStore } from '../store/transcript-event';
 
-const userScrollKeys = ['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', 'Space'];
+const userScrollKeys = [
+    'ArrowUp',
+    'ArrowDown',
+    'PageUp',
+    'PageDown',
+    'Home',
+    'End',
+    'Space',
+];
 
 let lastWheelTime: number = 0;
 let lastScrollTime: number = 0;

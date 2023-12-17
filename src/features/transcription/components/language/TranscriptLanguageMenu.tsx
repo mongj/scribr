@@ -1,8 +1,13 @@
-import { useRef, useState } from 'react';
-
-import { Button, Menu, MenuButton, MenuList, useOutsideClick } from '@chakra-ui/react';
+import {
+    Button,
+    Menu,
+    MenuButton,
+    MenuList,
+    useOutsideClick,
+} from '@chakra-ui/react';
 import { ChevronDownIcon, Globe2Icon } from 'lucide-react';
 import { Inter } from 'next/font/google';
+import { useRef, useState } from 'react';
 
 import LanguageList from './LanguageOptions';
 
@@ -20,8 +25,12 @@ export default function TranscriptLanguageMenu() {
         <Menu isLazy isOpen={isModalOpen}>
             <MenuButton
                 as={Button}
-                leftIcon={<Globe2Icon color="gray" strokeWidth={1.5} size={20} />}
-                rightIcon={<ChevronDownIcon color="gray" strokeWidth={1.5} size={20} />}
+                leftIcon={
+                    <Globe2Icon color="gray" strokeWidth={1.5} size={20} />
+                }
+                rightIcon={
+                    <ChevronDownIcon color="gray" strokeWidth={1.5} size={20} />
+                }
                 border="1px"
                 borderColor="gray.200"
                 background=""
@@ -30,7 +39,9 @@ export default function TranscriptLanguageMenu() {
                     setIsModalOpen(true);
                 }}
             >
-                <span className={`${inter.className} text-sm font-semibold text-slate-500`}>
+                <span
+                    className={`${inter.className} text-sm font-semibold text-slate-500`}
+                >
                     {'Language'}
                 </span>
             </MenuButton>

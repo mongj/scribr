@@ -30,7 +30,8 @@ export const useTranscriptDownloadStore = create<
     initialize: () => {
         set({
             targetLanguage: useTranscriptStore.getState().targetLanguage,
-            targetLanguageCode: useTranscriptStore.getState().targetLanguageCode,
+            targetLanguageCode:
+                useTranscriptStore.getState().targetLanguageCode,
         });
     },
 }));

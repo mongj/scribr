@@ -13,7 +13,7 @@ export default function NotFoundPage() {
                 </Heading>
                 <Text color={'gray.500'}>
                     Try searching something else, or{' '}
-                    <Link href="/" className="hover:underline">
+                    <Link href="/" className="underline">
                         return home
                     </Link>
                 </Text>

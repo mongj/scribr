@@ -27,8 +27,10 @@ const initialState: TranscriptState = {
     timestampedTranscript: {},
 };
 
-export const useTranscriptStore = create<TranscriptState & TranscriptActions>()((set) => ({
-    ...initialState,
+export const useTranscriptStore = create<TranscriptState & TranscriptActions>()(
+    (set) => ({
+        ...initialState,
 
-    reset: () => set(initialState),
-}));
+        reset: () => set(initialState),
+    }),
+);

@@ -5,7 +5,9 @@ export function DownloadData(id) {
     const targetLanguageCode = useTranscriptDownloadStore
         .getState()
         .targetLanguageCode.toLowerCase();
-    const targetFiletype = useTranscriptDownloadStore.getState().fileType.toLowerCase();
+    const targetFiletype = useTranscriptDownloadStore
+        .getState()
+        .fileType.toLowerCase();
 
     let fileExt;
     switch (targetFiletype) {
@@ -26,7 +28,11 @@ export function DownloadData(id) {
                 const dataBlob = new Blob(
                     [
                         processString(
-                            JSON.stringify(data['transcripts'][0]['text'], null, 2),
+                            JSON.stringify(
+                                data['transcripts'][0]['text'],
+                                null,
+                                2,
+                            ),
                             targetFiletype,
                         ),
                     ],

@@ -1,8 +1,6 @@
-import { FormEvent, RefObject } from 'react';
-
-import { NextRouter } from 'next/router';
-
 import { resetTranscriptStores } from '@/utils/reset-transcript-stores';
+import { NextRouter } from 'next/router';
+import { FormEvent, RefObject } from 'react';
 
 export default function searchHandler(
     event: FormEvent,

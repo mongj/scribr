@@ -25,15 +25,15 @@ const initialState: TranscriptEventState = {
     autoscroll: true,
 };
 
-export const useTranscriptEventStore = create<TranscriptEventState & TranscriptEventActions>()(
-    (set) => ({
-        ...initialState,
+export const useTranscriptEventStore = create<
+    TranscriptEventState & TranscriptEventActions
+>()((set) => ({
+    ...initialState,
 
-        updateScrolling: (status) => set({ isScrolling: status }),
-        updateWheeling: (status) => set({ isWheeling: status }),
-        updateMouseDown: (status) => set({ isMouseDown: status }),
-        updateKeyDown: (status) => set({ isKeyDown: status }),
-        updateAutoscroll: (status) => set({ autoscroll: status }),
-        reset: () => set(initialState),
-    }),
-);
+    updateScrolling: (status) => set({ isScrolling: status }),
+    updateWheeling: (status) => set({ isWheeling: status }),
+    updateMouseDown: (status) => set({ isMouseDown: status }),
+    updateKeyDown: (status) => set({ isKeyDown: status }),
+    updateAutoscroll: (status) => set({ autoscroll: status }),
+    reset: () => set(initialState),
+}));

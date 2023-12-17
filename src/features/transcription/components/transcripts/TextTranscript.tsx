@@ -1,12 +1,10 @@
-import { useState } from 'react';
-
+import { fetcher } from '@/utils/fetcher';
 import SkeletonList from '@components/ui/SkeletonList';
 import { useTranscriptStore } from '@transcription/store/transcript';
 import _ from 'lodash';
 import { Inter } from 'next/font/google';
+import { useState } from 'react';
 import useSWR from 'swr';
-
-import { fetcher } from '@/utils/fetcher';
 
 const inter = Inter({ subsets: ['latin'] });
 const TRANSCRIPTION_API_ENDPOINT = process.env.TRANSCRIPTION_API_ENDPOINT;
@@ -14,7 +12,10 @@ const TRANSCRIPTION_API_ENDPOINT = process.env.TRANSCRIPTION_API_ENDPOINT;
 export default function TextTranscript(props) {
     const language = useTranscriptStore((state) => state.targetLanguage);
     const target_url = `${TRANSCRIPTION_API_ENDPOINT}/transcripts/?id=${props.id}`;
-    const { data, error, isLoading } = useSWR(props.id ? target_url : null, fetcher);
+    const { data, error, isLoading } = useSWR(
+        props.id ? target_url : null,
+        fetcher,
+    );
     const [promiseContent, setpromiseContent] = useState('');
 
     if (isLoading) return <SkeletonList rowCount={25} isLoading={isLoading} />;
@@ -23,7 +24,11 @@ export default function TextTranscript(props) {
         error.message.then((value) => {
             setpromiseContent(value['message']);
         });
-        return <div className={`${inter.className}`}>{`Sorry... ${promiseContent}.`}</div>;
+        return (
+            <div
+                className={`${inter.className}`}
+            >{`Sorry... ${promiseContent}.`}</div>
+        );
     }
 
     if (data) {
@@ -31,9 +36,12 @@ export default function TextTranscript(props) {
 
         let targetTranscriptIndex;
 
-        const targetLanguage = language != '' ? language.toLowerCase() : 'english';
+        const targetLanguage =
+            language != '' ? language.toLowerCase() : 'english';
         const re = new RegExp(
-            `^(${targetLanguage.replaceAll('(', '\\(').replaceAll(')', '\\)')})`,
+            `^(${targetLanguage
+                .replaceAll('(', '\\(')
+                .replaceAll(')', '\\)')})`,
             'g',
         );
 
@@ -46,11 +54,13 @@ export default function TextTranscript(props) {
         }
 
         useTranscriptStore.setState({
-            targetLanguage: data['transcripts'][targetTranscriptIndex ?? 0].language,
+            targetLanguage:
+                data['transcripts'][targetTranscriptIndex ?? 0].language,
         });
 
         useTranscriptStore.setState({
-            targetLanguageCode: data['transcripts'][targetTranscriptIndex ?? 0].languageCode,
+            targetLanguageCode:
+                data['transcripts'][targetTranscriptIndex ?? 0].languageCode,
         });
 
         return (
