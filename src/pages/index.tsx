@@ -7,6 +7,7 @@ import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -48,6 +49,16 @@ export default function Home() {
                     content="Transcribe Youtube videos and download transcripts for free. Supports text, JSON, SRT, WebVTT."
                 />
             </Head>
+            <Script src="https://www.googletagmanager.com/gtag/js?id=G-MS9SB3DDGX" />
+            <Script id="google-analytics">
+                {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                
+                gtag('config', 'G-MS9SB3DDGX');
+                `}
+            </Script>
             <header className="flex-none bg-slate-50">
                 <Navbar showSearchBar={false} />
             </header>
