@@ -31,12 +31,6 @@ function UpdateMarker() {
             element.classList.add(styles['marker-current']);
             element.classList.remove(styles['marker-previous']);
             element.classList.remove(styles['marker-next']);
-            if (
-                useTranscriptEventStore.getState().autoscroll &&
-                !useTranscriptEventStore.getState().isScrolling
-            ) {
-                element.scrollIntoView({ block: 'center' });
-            }
         } else if (currentPlayerTime > segmentEnd) {
             element.classList.remove('marker-focus');
             element.classList.remove(styles['marker-current']);
@@ -49,6 +43,18 @@ function UpdateMarker() {
             element.classList.add(styles['marker-next']);
         }
     });
+
+    const currentMarkers = Array.from(
+        document.getElementsByClassName('marker-focus'),
+    );
+
+    if (
+        useTranscriptEventStore.getState().autoscroll &&
+        !useTranscriptEventStore.getState().isScrolling
+    ) {
+        console.log(`scrolling marker ${currentMarkers[0]}`);
+        currentMarkers[0].scrollIntoView({ block: 'center' });
+    }
 }
 
 export { UpdateMarker, UpdateMarkerIfPlaying };
