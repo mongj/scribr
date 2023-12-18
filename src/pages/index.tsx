@@ -35,6 +35,18 @@ export default function Home() {
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
                 <meta property="og:url" content="https://scribr.vercel.app/" />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta property="twitter:domain" content="scribr.vercel.app" />
+                <meta
+                    property="twitter:url"
+                    content="https://scribr.vercel.app/"
+                />
+                <meta name="twitter:title" content="Scribr" />
+                <meta
+                    name="twitter:description"
+                    content="Transcribe Youtube videos and download transcripts for free. Supports text, JSON, SRT, WebVTT."
+                />
             </Head>
             <header className="flex-none bg-slate-50">
                 <Navbar showSearchBar={false} />
