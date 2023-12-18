@@ -3,7 +3,7 @@
 Scribr is a Next.js application that allows users to transcribe YouTube videos, and download transcripts in various formats (text, JSON, SRT, WebVTT) for free.
 This app is mainly a frontend wrapper for my [youtube-transcriber-api](https://github.com/mongj/youtube-transcriber-api).
 
-Try it out here: https://scribr.vercel.app/
+### Try it out here: https://scribr.vercel.app/
 
 ![scribr-1](https://github.com/mongj/scribr/assets/87565927/198730c8-ffd5-4079-8867-b81b907514b3)
 
