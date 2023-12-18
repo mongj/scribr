@@ -36,6 +36,7 @@ export default function SearchBar(props) {
                     pl="3.5rem"
                     _focus={{ borderColor: 'gray.300' }}
                     ref={videoLink}
+                    textOverflow="ellipsis"
                 />
             </InputGroup>
         </form>
