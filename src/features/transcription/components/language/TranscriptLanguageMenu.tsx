@@ -38,14 +38,15 @@ export default function TranscriptLanguageMenu() {
                 onClick={() => {
                     setIsModalOpen(true);
                 }}
+                iconSpacing={1}
             >
                 <span
-                    className={`${inter.className} text-sm font-semibold text-slate-500`}
+                    className={`${inter.className} text-sm font-semibold text-slate-500 hidden xs:block`}
                 >
-                    {'Language'}
+                    Language
                 </span>
             </MenuButton>
-            <MenuList>
+            <MenuList zIndex={9999}>
                 <LanguageList />
             </MenuList>
         </Menu>

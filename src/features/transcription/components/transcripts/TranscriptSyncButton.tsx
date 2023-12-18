@@ -15,7 +15,7 @@ export default function TranscriptSyncButton() {
                 onClick={syncTranscriptMarker}
             >
                 <span className="text-sm font-semibold text-slate-500">
-                    {'Sync'}
+                    Sync
                 </span>
             </Button>
         </Tooltip>

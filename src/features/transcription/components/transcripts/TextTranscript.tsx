@@ -11,7 +11,7 @@ const TRANSCRIPTION_API_ENDPOINT = process.env.TRANSCRIPTION_API_ENDPOINT;
 
 export default function TextTranscript(props) {
     const language = useTranscriptStore((state) => state.targetLanguage);
-    const target_url = `${TRANSCRIPTION_API_ENDPOINT}/transcripts/?id=${props.id}`;
+    const target_url = `${TRANSCRIPTION_API_ENDPOINT}/transcripts?id=${props.id}`;
     const { data, error, isLoading } = useSWR(
         props.id ? target_url : null,
         fetcher,

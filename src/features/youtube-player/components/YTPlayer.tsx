@@ -23,7 +23,14 @@ function YTPlayer({ id, height, width }) {
         },
     };
 
-    return <YouTube videoId={id} opts={opts} onReady={onPlayerReady} />;
+    return (
+        <YouTube
+            videoId={id}
+            opts={opts}
+            onReady={onPlayerReady}
+            className="w-full h-full"
+        />
+    );
 }
 
 export default YTPlayer;

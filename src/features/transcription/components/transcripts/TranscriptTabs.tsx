@@ -15,11 +15,11 @@ import {
     WheelHandler,
 } from '@transcription/lib/transcript-event';
 
-import TextTranscript from './TextTranscript';
 import TimestampedTranscript from './TimestampedTranscript';
 
 export default function TranscriptTabs(props) {
     return (
+        // Using tabs here as I am planning to add other types of transcripts in the future
         <Tabs
             position="relative"
             variant="line"
@@ -27,10 +27,8 @@ export default function TranscriptTabs(props) {
             flexDirection={'column'}
             flexGrow={1}
         >
-            <TabList paddingLeft={4} display="flex">
-                <Tab>Follow</Tab>
-                <Tab>Read</Tab>
-                <Tab>Outline</Tab>
+            <TabList paddingLeft={4} paddingTop={2} display="flex">
+                <Tab fontWeight="medium">Transcript</Tab>
             </TabList>
             <TabIndicator
                 mt="-1.5px"
@@ -54,10 +52,6 @@ export default function TranscriptTabs(props) {
                 <TabPanel display="flex" flexGrow={1}>
                     <TimestampedTranscript id={props.id} />
                 </TabPanel>
-                <TabPanel>
-                    <TextTranscript id={props.id} />
-                </TabPanel>
-                <TabPanel>work in progress</TabPanel>
             </TabPanels>
         </Tabs>
     );

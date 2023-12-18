@@ -21,7 +21,15 @@ module.exports = {
                 ytwhite: '#FFFFFF',
                 ytblack: '#282828',
             },
+            screens: {
+                xs: '460px',
+                sm: '600px',
+                xl: '1200px',
+            },
         },
+    },
+    future: {
+        hoverOnlyWhenSupported: true,
     },
     plugins: [],
 };

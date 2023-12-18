@@ -22,15 +22,16 @@ export default function TranscriptDownloadButton(props) {
         <>
             <Button
                 leftIcon={
-                    <DownloadIcon color="gray" strokeWidth={1.5} size={15} />
+                    <DownloadIcon color="gray" strokeWidth={2} size={15} />
                 }
                 border="1px"
                 borderColor="gray.200"
                 background=""
                 _hover={{ background: '#f1f5f9' }}
                 onClick={onOpen}
+                iconSpacing={0}
             >
-                <span className="text-sm font-semibold text-slate-500">
+                <span className="text-sm font-semibold text-slate-500 pl-2 hidden xs:block">
                     {'Download'}
                 </span>
             </Button>

@@ -21,7 +21,7 @@ export function DownloadData(id) {
             fileExt = targetFiletype;
     }
 
-    const target_url = `${TRANSCRIPTION_API_ENDPOINT}/transcripts/?id=${id}&lang=${targetLanguageCode}&type=${targetFiletype}`;
+    const target_url = `${TRANSCRIPTION_API_ENDPOINT}/transcripts?id=${id}&lang=${targetLanguageCode}&type=${targetFiletype}`;
     fetch(target_url).then((res) => {
         if (res.ok) {
             res.json().then((data) => {

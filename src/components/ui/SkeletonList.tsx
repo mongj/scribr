@@ -2,7 +2,7 @@ import { Skeleton, Stack } from '@chakra-ui/react';
 
 export default function SkeletonList(props) {
     return (
-        <Stack flexGrow={1}>
+        <Stack flexGrow={1} padding={4}>
             {Array(props.rowCount)
                 .fill(1)
                 .map((_, index) => (

@@ -18,7 +18,7 @@ export default function SearchBar(props) {
     }
 
     return (
-        <form className="flex w-full mt-2 mb-2" onSubmit={submitHandler}>
+        <form className="flex w-full py-2" onSubmit={submitHandler}>
             <InputGroup>
                 <InputLeftElement pointerEvents="none" h="100%" pl="1rem">
                     <Search

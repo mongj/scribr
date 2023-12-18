@@ -1,17 +1,6 @@
 import Layout from '@/components/layouts';
-import {
-    Badge,
-    Stack,
-    Tab,
-    TabIndicator,
-    TabList,
-    TabPanel,
-    TabPanels,
-    Tabs,
-} from '@chakra-ui/react';
 import TranscriptLanguageMenu from '@transcription/components/language/TranscriptLanguageMenu';
-import TranscriptSyncButton from '@transcription/components/transcripts/TranscriptSyncButton';
-import TranscriptTabs from '@transcription/components/transcripts/TranscriptTabs';
+import TimestampedTranscript from '@transcription/components/transcripts/TimestampedTranscript';
 import TranscriptDownloadButton from '@transcription/download/components/TranscriptDownloadButton';
 import YTPlayer from '@youtube-player/components/YTPlayer';
 import _ from 'lodash';
@@ -26,62 +15,30 @@ export default function VideoTranscriptPage() {
     return (
         <Layout>
             <main
-                className={`${inter.className} flex h-full flex-1 overflow-hidden bg-slate-50 p-8`}
+                className={`${inter.className} flex flex-col xl:flex-row h-full overflow-hidden bg-slate-50 sm:p-8 sm:gap-4`}
             >
-                <div className="flex flex-col">
-                    <div className="flex flex-none overflow-hidden rounded-lg border-2 border-slate-100 bg-white">
+                <div className="w-full max-xl:max-w-[800px] max-xl:m-auto">
+                    <div className="w-full max-h-full aspect-video overflow-hidden sm:rounded-lg shadow">
                         <YTPlayer
                             id={router.query.id}
-                            height={405}
-                            width={720}
+                            height="100%"
+                            width="100%"
                         />
                     </div>
-                    <div className="mb-2 ml-2 mt-4">
-                        <Stack direction="row">
-                            <h3 className="text-base font-semibold">
-                                AI Copilot
-                            </h3>
-                            <div className="h-full align-middle">
-                                <Badge colorScheme="blue">Experimental</Badge>
-                            </div>
-                        </Stack>
-                    </div>
-                    <div className="flex flex-auto flex-col overflow-hidden rounded-lg border-2 border-slate-100 bg-white">
-                        <Tabs position="relative" variant="line" height="100%">
-                            <TabList>
-                                <Tab>Summary</Tab>
-                                <Tab>Chat</Tab>
-                            </TabList>
-                            <TabIndicator
-                                mt="-1.5px"
-                                height="1.5px"
-                                bg="blue.500"
-                                borderRadius="1px"
-                            />
-                            <TabPanels height="100%" overflowY="auto">
-                                <TabPanel>
-                                    <p>work in progress</p>
-                                </TabPanel>
-                                <TabPanel>
-                                    <p>work in progress</p>
-                                </TabPanel>
-                            </TabPanels>
-                        </Tabs>
-                    </div>
                 </div>
-                <div className="ml-4 flex flex-auto flex-col overflow-hidden rounded-lg border-2 border-slate-100 bg-white">
-                    <div className="mx-4 mt-4 flex flex-row">
-                        <h3 className="self-center pl-2 text-base font-semibold">
+                <div className="w-full flex flex-grow flex-col sm:rounded-lg overflow-y-clip min-h-0 border border-slate-100 bg-white shadow max-w-[800px] max-xl:m-auto">
+                    <div className="flex p-4 place-content-between place-items-center">
+                        <p className="pl-2 pr-6 font-medium text-lg">
                             Transcript
-                        </h3>
-                        <div className="ml-auto flex gap-2">
-                            <TranscriptSyncButton />
-                            <TranscriptLanguageMenu />
+                        </p>
+                        <div className="flex gap-2">
                             <TranscriptDownloadButton id={router.query.id} />
+                            <TranscriptLanguageMenu />
                         </div>
                     </div>
-                    <div className="flex overflow-hidden">
-                        <TranscriptTabs id={router.query.id} />
+                    <hr />
+                    <div className="flex flex-auto overflow-auto relative">
+                        <TimestampedTranscript id={router.query.id} />
                     </div>
                 </div>
             </main>

@@ -5,6 +5,7 @@ interface TranscriptEventState {
     isWheeling: boolean;
     isMouseDown: boolean;
     isKeyDown: boolean;
+    isTouchStart: boolean;
     autoscroll: boolean;
 }
 
@@ -13,6 +14,7 @@ interface TranscriptEventActions {
     updateWheeling: (status: boolean) => void;
     updateMouseDown: (status: boolean) => void;
     updateKeyDown: (status: boolean) => void;
+    updateTouchStart: (status: boolean) => void;
     updateAutoscroll: (status: boolean) => void;
     reset: () => void;
 }
@@ -22,6 +24,7 @@ const initialState: TranscriptEventState = {
     isWheeling: false,
     isMouseDown: false,
     isKeyDown: false,
+    isTouchStart: false,
     autoscroll: true,
 };
 
@@ -34,6 +37,7 @@ export const useTranscriptEventStore = create<
     updateWheeling: (status) => set({ isWheeling: status }),
     updateMouseDown: (status) => set({ isMouseDown: status }),
     updateKeyDown: (status) => set({ isKeyDown: status }),
+    updateTouchStart: (status) => set({ isTouchStart: status }),
     updateAutoscroll: (status) => set({ autoscroll: status }),
     reset: () => set(initialState),
 }));

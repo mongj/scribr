@@ -23,7 +23,8 @@ function ScrollHandler() {
         if (
             useTranscriptEventStore.getState().isMouseDown == true ||
             useTranscriptEventStore.getState().isKeyDown == true ||
-            useTranscriptEventStore.getState().isWheeling == true
+            useTranscriptEventStore.getState().isWheeling == true ||
+            useTranscriptEventStore.getState().isTouchStart == true
         ) {
             useTranscriptEventStore.setState({ autoscroll: false });
         }
@@ -74,6 +75,14 @@ function KeyUpHandler(event) {
     }
 }
 
+function TouchStartHandler() {
+    useTranscriptEventStore.setState({ isTouchStart: true });
+}
+
+function TouchEndHandler() {
+    useTranscriptEventStore.setState({ isTouchStart: false });
+}
+
 export {
     ScrollHandler,
     MouseDownHandler,
@@ -81,4 +90,6 @@ export {
     KeyDownHandler,
     KeyUpHandler,
     WheelHandler,
+    TouchStartHandler,
+    TouchEndHandler,
 };
