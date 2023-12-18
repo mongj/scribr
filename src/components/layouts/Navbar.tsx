@@ -7,8 +7,8 @@ import Image from 'next/image';
 export default function Navbar(props) {
     return props.showSearchBar ? (
         <nav className="flex place-items-center px-4 sm:px-8 h-16 leading-normal border-b-2 border-slate-100 gap-4">
-            <Link href="/" className="min-w-[36px]">
-                <div className="flex flex-none xs:gap-2">
+            <Link href="/" className="flex min-w-[36px]">
+                <div className="flex xs:gap-2 min-w-0">
                     <Image src={logoIcon} height={36} alt="logo icon" />
                     <Image
                         src={logoLight}
@@ -18,7 +18,7 @@ export default function Navbar(props) {
                     />
                 </div>
             </Link>
-            <div className="flex-initial overflow-hidden w-96 sm:pl-8">
+            <div className="flex-initial overflow-hidden w-full xs:w-80 sm:pl-8">
                 <SearchBar iconsize={16} />
             </div>
         </nav>
