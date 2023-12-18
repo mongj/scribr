@@ -44,16 +44,14 @@ function UpdateMarker() {
         }
     });
 
-    const currentMarkers = Array.from(
-        document.getElementsByClassName('marker-focus'),
-    );
-
     if (
         useTranscriptEventStore.getState().autoscroll &&
         !useTranscriptEventStore.getState().isScrolling
     ) {
-        console.log(`scrolling marker ${currentMarkers[0]}`);
-        currentMarkers[0].scrollIntoView({ block: 'center' });
+        const marker = document.getElementsByClassName('marker-focus')[0];
+        if (marker) {
+            marker.scrollIntoView({ block: 'center' });
+        }
     }
 }
 
