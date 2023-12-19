@@ -36,9 +36,9 @@ export default function TimestampedTranscript(props) {
             setpromiseContent(value['message']);
         });
         return (
-            <div
-                className={`${inter.className}`}
-            >{`Sorry... Something went wrong: ${promiseContent}.`}</div>
+            <span
+                className={`${inter.className} px-6 py-2`}
+            >{`Ooops, something went wrong. (Error: ${promiseContent}).`}</span>
         );
     }
 
