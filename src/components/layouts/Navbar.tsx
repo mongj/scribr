@@ -9,10 +9,16 @@ export default function Navbar(props) {
         <nav className="flex place-items-center px-4 sm:px-8 h-16 leading-normal border-b-2 border-slate-100 gap-4">
             <Link href="/" className="flex min-w-[36px]">
                 <div className="flex xs:gap-2 min-w-0">
-                    <Image src={logoIcon} height={36} alt="logo icon" />
+                    <Image
+                        src={logoIcon}
+                        height={36}
+                        width={36}
+                        alt="logo icon"
+                    />
                     <Image
                         src={logoLight}
-                        height={20}
+                        height={36}
+                        width={68}
                         alt="logo with words"
                         className="hidden xs:block"
                     />
@@ -26,8 +32,18 @@ export default function Navbar(props) {
         <nav className="flex place-content-between place-items-center px-4 sm:px-8 h-16 leading-normal border-b-2 border-slate-100 gap-4">
             <Link href="/" className="min-w-[36px]">
                 <div className="flex flex-none gap-2">
-                    <Image src={logoIcon} height={36} alt="logo icon" />
-                    <Image src={logoLight} height={20} alt="logo with words" />
+                    <Image
+                        src={logoIcon}
+                        height={36}
+                        width={36}
+                        alt="logo icon"
+                    />
+                    <Image
+                        src={logoLight}
+                        height={36}
+                        width={68}
+                        alt="logo with words"
+                    />
                 </div>
             </Link>
             <Link
